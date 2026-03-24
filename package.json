@@ -1,0 +1,20 @@
+{
+  "name": "inm320saa_frontedfframework_ck_sarunyaphong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss/style.scss css/style.css",
+    "server": "lite-server",
+    "dev": "concurrently \"npm run sass\" \"npm run server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "lite-server": "^2.6.1",
+    "sass": "^1.93.0"
+  }
+}
