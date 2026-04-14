@@ -1,0 +1,68 @@
+{
+    "summaryCards": [
+      {
+        "title": "Unresolved",
+        "number": "60"
+      },
+      {
+        "title": "Overdue",
+        "number": "16"
+      },
+      {
+        "title": "Open",
+        "number": "43"
+      },
+      {
+        "title": "On hold",
+        "number": "64"
+      }
+    ],
+    "unresolvedTickets": {
+      "title": "Unresolved tickets",
+      "group": "Group: Support",
+      "linkText": "View details",
+      "items": [
+        {
+          "name": "Waiting on Feature Request",
+          "count": "4238"
+        },
+        {
+          "name": "Awaiting Customer Response",
+          "count": "1005"
+        },
+        {
+          "name": "Awaiting Developer Fix",
+          "count": "914"
+        },
+        {
+          "name": "Pending",
+          "count": "281"
+        }
+      ]
+    },
+    "tasks": {
+      "title": "Tasks",
+      "group": "Today",
+      "linkText": "View all",
+      "items": [
+        {
+          "name": "Finish ticket update",
+          "status": "Urgent",
+          "statusClass": "text-bg-warning",
+          "done": false
+        },
+        {
+          "name": "Create new ticket example",
+          "status": "New",
+          "statusClass": "text-bg-success",
+          "done": false
+        },
+        {
+          "name": "Update ticket report",
+          "status": "Default",
+          "statusClass": "text-bg-secondary",
+          "done": true
+        }
+      ]
+    }
+  }

@@ -1,3 +1,6 @@
+/* ========================================
+   Base styles
+======================================== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,6 +8,30 @@ body {
   color: #252733;
 }
 
+/* ========================================
+   Mobile top bar
+======================================== */
+.mobile-topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dfe0eb;
+  padding: 1rem;
+}
+
+.mobile-brand-text {
+  color: #252733;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mobile-menu-btn {
+  font-size: 1.5rem;
+  color: #252733;
+  padding: 0;
+}
+
+/* ========================================
+   Sidebar
+======================================== */
 .sidebar {
   background-color: #363740;
   min-height: 100vh;
@@ -47,10 +74,10 @@ body {
 }
 
 .sidebar-bottom {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(223, 224, 235, 0.06);
-  }
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(223, 224, 235, 0.06);
+}
 
 .sidebar .nav-link {
   color: #a4a6b3;
@@ -86,20 +113,27 @@ body {
   opacity: 0.9;
 }
 
+/* ========================================
+   Header
+======================================== */
 .dashboard-header {
   background-color: #ffffff;
   border-bottom: 1px solid #dfe0eb;
   min-height: 92px;
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 0.75rem;
 }
 
 .page-title {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-left: 8px;
+  margin-left: 0;
 }
 
 .user-area {
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .header-icon-btn {
@@ -151,9 +185,11 @@ body {
   border: 1.5px solid #dfe0eb;
 }
 
+/* ========================================
+   Main layout
+======================================== */
 .dashboard-main {
   background-color: #f7f8fc;
-  padding: 2rem !important;
 }
 
 .summary-card,
@@ -171,6 +207,7 @@ body {
 
 .summary-card {
   min-height: 136px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .summary-card .card-title {
@@ -178,25 +215,29 @@ body {
   color: #9fa2b4;
   margin-bottom: 0.9rem;
   font-weight: 700;
+  transition: color 0.2s ease;
 }
 
 .summary-number {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
+  color: #252733;
+  transition: color 0.2s ease;
 }
 
-.active-card {
-  border: 2px solid #3751ff;
+/* Blue border only on hover */
+.summary-card:hover {
+  border-color: #3751ff;
 }
 
-.active-card .card-title,
-.active-card .summary-number {
+.summary-card:hover .card-title,
+.summary-card:hover .summary-number {
   color: #3751ff;
 }
 
 .section-title {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -212,6 +253,9 @@ body {
   font-weight: 600;
 }
 
+/* ========================================
+   Trends section
+======================================== */
 .trend-labels {
   font-size: 0.9rem;
   align-items: center;
@@ -258,15 +302,16 @@ body {
 }
 
 .trend-stats {
-  border-left: 1px solid #dfe0eb;
-  height: 100%;
+  border-top: 1px solid #dfe0eb;
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 .trend-stat-item {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.5rem 0 1.5rem 1.5rem;
+  padding: 1.2rem 0;
   border-bottom: 1px solid #dfe0eb;
 }
 
@@ -280,6 +325,9 @@ body {
   font-size: 1.1rem;
 }
 
+/* ========================================
+   List blocks
+======================================== */
 .list-group-item {
   border-left: 0;
   border-right: 0;
@@ -323,6 +371,11 @@ body {
   color: #ffffff;
 }
 
+.task-toggle-btn {
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
 .task-circle-filled {
   background-color: #3751ff;
   border-color: #3751ff;
@@ -334,36 +387,35 @@ body {
   padding: 0.5rem 0.85rem;
 }
 
-@media (max-width: 991.98px) {
-  .trend-stats {
-    border-left: 0;
-    border-top: 1px solid #dfe0eb;
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
-
-  .trend-stat-item {
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 767.98px) {
+/* ========================================
+   Mobile-first media queries
+======================================== */
+@media (min-width: 768px) {
   .dashboard-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem !important;
-  }
-
-  .dashboard-main {
-    padding: 1rem !important;
-  }
-
-  .sidebar {
-    min-height: auto;
+    flex-direction: row;
+    align-items: center !important;
   }
 
   .page-title {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: 992px) {
+  .trend-stats {
+    border-top: 0;
+    border-left: 1px solid #dfe0eb;
+    margin-top: 0;
+    padding-top: 0;
+    height: 100%;
+  }
+
+  .trend-stat-item {
+    padding: 1.5rem 0 1.5rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
   }
 }
